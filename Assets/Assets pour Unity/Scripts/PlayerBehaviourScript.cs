@@ -1,0 +1,48 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class PlayerBehaviourScript : MonoBehaviour {
+
+    public float _runSpeed = 0.5f;
+    public float _strafeSpeed = 0.5f;
+    private const float CAMERA_TURN_FACTOR = 10.0f;
+    public GameObject _cameraPivot;
+	// Use this for initialization
+	void Start () {
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+        // Get mouse input
+        float horizontalMouseInput = Input.GetAxis("Mouse X");
+        float verticalMouseInput = Input.GetAxis("Mouse Y");
+
+        // Turn player and pivot
+        transform.RotateAround(transform.position, transform.up, CAMERA_TURN_FACTOR * horizontalMouseInput);
+        _cameraPivot.transform.RotateAround(_cameraPivot.transform.position, _cameraPivot.transform.right, -CAMERA_TURN_FACTOR * verticalMouseInput);
+
+        // Get the input from up/down keys
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        // Advance...       in nose direction  by run speed * frame duration * input (-1/0/1)
+        transform.position += transform.forward * _runSpeed * Time.deltaTime * verticalInput
+                           + transform.right * _strafeSpeed * Time.deltaTime * horizontalInput;
+	}
+
+    private const float TEST_GROUND_DISTANCE = 0.2f;
+    private bool IsOnEarth()
+    {
+        // Launch ray downwards
+        //    ^  _A_
+        //    |  (") / \
+        //    |---|-(   )
+        //    |   |  \ /
+        //    |  / \
+        //  ____/_T_\____
+        //        |ray  
+        Ray ray = new Ray(transform.position + Vector3.up * TEST_GROUND_DISTANCE * 0.5f, -Vector3.up);
+        return Physics.Raycast(ray, TEST_GROUND_DISTANCE, LayerMask.GetMask("Terrain"));
+    }
+}

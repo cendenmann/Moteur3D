@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: 0573dc1b71cd46d4694dcecc174b93e5
+timeCreated: 1479381651
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: COG
+    100002: CONTROLS
+    100004: Geant:Skin
+    100006: //RootNode
+    100008: GlobalSRT
+    100010: Head
+    100012: HeadRoot
+    100014: LArmEff
+    100016: LArmRoot
+    100018: LBicept
+    100020: LFoot
+    100022: LFootEff
+    100024: LForearm
+    100026: LHand
+    100028: LHandEff
+    100030: LHandRoot
+    100032: LLegRoot
+    100034: LRootFoot
+    100036: LRootShoulder
+    100038: LShin
+    100040: LShoulder
+    100042: LShoulderEff
+    100044: LThigh
+    100046: LToe
+    100048: LToeEff
+    100050: ManSkeletonBasic
+    100052: Neck
+    100054: NeckEff
+    100056: RArmEff
+    100058: RArmRoot
+    100060: RBicept
+    100062: RFoot
+    100064: RFootEff
+    100066: RForearm
+    100068: RHand
+    100070: RHandEff
+    100072: RHandRoot
+    100074: RLegRoot
+    100076: RLegRoot1
+    100078: RRootFoot
+    100080: RRootShoulder
+    100082: RShin
+    100084: RShoulder
+    100086: RShoulderEff
+    100088: RThigh
+    100090: RToe
+    100092: RToeEff
+    100094: Skeleton
+    100096: Spine1
+    100098: Spine2
+    100100: Spine3
+    100102: SpineEff
+    100104: SpineRoot
+    100106: Weapon
+    100108: WeaponPivot
+    400000: COG
+    400002: CONTROLS
+    400004: Geant:Skin
+    400006: //RootNode
+    400008: GlobalSRT
+    400010: Head
+    400012: HeadRoot
+    400014: LArmEff
+    400016: LArmRoot
+    400018: LBicept
+    400020: LFoot
+    400022: LFootEff
+    400024: LForearm
+    400026: LHand
+    400028: LHandEff
+    400030: LHandRoot
+    400032: LLegRoot
+    400034: LRootFoot
+    400036: LRootShoulder
+    400038: LShin
+    400040: LShoulder
+    400042: LShoulderEff
+    400044: LThigh
+    400046: LToe
+    400048: LToeEff
+    400050: ManSkeletonBasic
+    400052: Neck
+    400054: NeckEff
+    400056: RArmEff
+    400058: RArmRoot
+    400060: RBicept
+    400062: RFoot
+    400064: RFootEff
+    400066: RForearm
+    400068: RHand
+    400070: RHandEff
+    400072: RHandRoot
+    400074: RLegRoot
+    400076: RLegRoot1
+    400078: RRootFoot
+    400080: RRootShoulder
+    400082: RShin
+    400084: RShoulder
+    400086: RShoulderEff
+    400088: RThigh
+    400090: RToe
+    400092: RToeEff
+    400094: Skeleton
+    400096: Spine1
+    400098: Spine2
+    400100: Spine3
+    400102: SpineEff
+    400104: SpineRoot
+    400106: Weapon
+    400108: WeaponPivot
+    2300000: Weapon
+    3300000: Weapon
+    4300000: Geant:Skin
+    4300002: Weapon
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Geant:Skin
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
