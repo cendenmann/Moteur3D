@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PlayerBehaviourScript : MonoBehaviour {
 
-    public float _runSpeed = 0.5f;
+    public float _runSpeed = 10.5f;
     public float _strafeSpeed = 0.5f;
     private const float CAMERA_TURN_FACTOR = 10.0f;
     public GameObject _cameraPivot;
@@ -58,9 +58,10 @@ public class PlayerBehaviourScript : MonoBehaviour {
         scoreText.text = score.ToString();
     }
 
-    public void AddScore(int newScoreValue)
+    public int AddScore(int newScoreValue)
     {
         score += newScoreValue;
         UpdateScore();
+        return score;
     }
 }
