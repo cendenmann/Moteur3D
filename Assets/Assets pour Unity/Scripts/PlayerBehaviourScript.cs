@@ -20,6 +20,7 @@ public class PlayerBehaviourScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Time.timeScale == 0) return;
         // Get mouse input
         float horizontalMouseInput = Input.GetAxis("Mouse X");
         float verticalMouseInput = Input.GetAxis("Mouse Y");
@@ -54,7 +55,7 @@ public class PlayerBehaviourScript : MonoBehaviour {
 
     void UpdateScore()
     {
-        scoreText.text = ""+score;
+        scoreText.text = score.ToString();
     }
 
     public void AddScore(int newScoreValue)
