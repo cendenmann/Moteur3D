@@ -11,18 +11,26 @@ public class RandomObjects : MonoBehaviour
 
     void Start()
     {
-        PlaceCubes();
+        PlaceRubbish();
     }
 
-    void PlaceCubes()
+    void PlaceRubbish()
     {
 
         for (int i = 0; i < numberOfObjects; i++)
         {
-            Instantiate(paper, GeneratedPosition(), Quaternion.Euler(GeneratedRotation()));
-            Instantiate(plastic, GeneratedPosition(), Quaternion.Euler(GeneratedRotation()));
-            Instantiate(metal, GeneratedPosition(), Quaternion.Euler(GeneratedRotation()));
-            Instantiate(glass, GeneratedPosition(), Quaternion.Euler(GeneratedRotation()));
+            var v1 = (GameObject)Instantiate(paper, GeneratedPosition(), Quaternion.Euler(GeneratedRotation()));
+            var v2 = (GameObject)Instantiate(plastic, GeneratedPosition(), Quaternion.Euler(GeneratedRotation()));
+            var v3 = (GameObject)Instantiate(metal, GeneratedPosition(), Quaternion.Euler(GeneratedRotation()));
+            var v4 = (GameObject)Instantiate(glass, GeneratedPosition(), Quaternion.Euler(GeneratedRotation()));
+            v1.AddComponent<BoxCollider>().isTrigger = true;
+            v2.AddComponent<BoxCollider>().isTrigger = true;
+            v3.AddComponent<BoxCollider>().isTrigger = true;
+            v4.AddComponent<BoxCollider>().isTrigger = true;
+            v1.AddComponent<Collect>();
+            v2.AddComponent<Collect>();
+            v3.AddComponent<Collect>();
+            v4.AddComponent<Collect>();
         }
     }
 
