@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerBehaviourScript : MonoBehaviour {
@@ -7,9 +8,14 @@ public class PlayerBehaviourScript : MonoBehaviour {
     public float _strafeSpeed = 0.5f;
     private const float CAMERA_TURN_FACTOR = 10.0f;
     public GameObject _cameraPivot;
+
+    public Text scoreText;
+    private int score;
+
 	// Use this for initialization
 	void Start () {
-	
+        score = 0;
+        UpdateScore();
 	}
 	
 	// Update is called once per frame
@@ -44,5 +50,16 @@ public class PlayerBehaviourScript : MonoBehaviour {
         //        |ray  
         Ray ray = new Ray(transform.position + Vector3.up * TEST_GROUND_DISTANCE * 0.5f, -Vector3.up);
         return Physics.Raycast(ray, TEST_GROUND_DISTANCE, LayerMask.GetMask("Terrain"));
+    }
+
+    void UpdateScore()
+    {
+        scoreText.text = ""+score;
+    }
+
+    public void AddScore(int newScoreValue)
+    {
+        score += newScoreValue;
+        UpdateScore();
     }
 }
