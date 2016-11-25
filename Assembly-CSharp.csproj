@@ -45,6 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Assets pour Unity\Scripts\Affichage.cs" />
+     <Compile Include="Assets\Assets pour Unity\Scripts\BinSensor.cs" />
      <Compile Include="Assets\Assets pour Unity\Scripts\Collect.cs" />
      <Compile Include="Assets\Assets pour Unity\Scripts\GameInterface.cs" />
      <Compile Include="Assets\Assets pour Unity\Scripts\Inventory.cs" />
