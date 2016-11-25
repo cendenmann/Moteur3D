@@ -50,6 +50,7 @@
      <Compile Include="Assets\Assets pour Unity\Scripts\Collect.cs" />
      <Compile Include="Assets\Assets pour Unity\Scripts\GameInterface.cs" />
      <Compile Include="Assets\Assets pour Unity\Scripts\Inventory.cs" />
+     <Compile Include="Assets\Assets pour Unity\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Assets pour Unity\Scripts\NextLevelSensor.cs" />
      <Compile Include="Assets\Assets pour Unity\Scripts\PlayerBehaviourScript.cs" />
      <Compile Include="Assets\Assets pour Unity\Scripts\RandomObjects.cs" />
