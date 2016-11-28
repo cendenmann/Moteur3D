@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/* Pavlov Catalina
+ * Projet 3D
+ * Passage to next level
+ */
+using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 

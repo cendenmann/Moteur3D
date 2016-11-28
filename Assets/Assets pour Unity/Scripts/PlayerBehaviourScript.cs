@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/* Endenmann Cyrielle - Pavlov Catalina
+ * Projet 3D
+ * Player class
+ */
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 

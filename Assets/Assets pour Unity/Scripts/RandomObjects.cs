@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/* Pavlov Catalina
+ * Projet 3D
+ * Random Objects
+ */
+using UnityEngine;
 using System.Collections;
 
 public class RandomObjects : MonoBehaviour
