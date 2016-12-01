@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
 	public GameObject _menu;
+    public GameObject _mode;
 	public GameObject _options;
 	public GameObject _howto;
 
@@ -23,12 +24,28 @@ public class MainMenu : MonoBehaviour {
 	void Update () {
 	
 	}
-
+    //PAVLOV Catalina
 	// Play game
 	public void OnPlayClicked() {
-		SceneManager.LoadScene("game");
-		Time.timeScale = 1.0f;
+        _menu.SetActive(false);
+        _mode.SetActive(true);
 	}
+
+    //PAVLOV Catalina
+    // Load time scene
+    public void OnTimeModeClicked()
+    {
+        SceneManager.LoadScene("game");
+        Time.timeScale = 1.0f;
+    }
+
+    //PAVLOV Catalina
+    // Load simple scene
+    public void OnSimpleModeClicked()
+    {
+        SceneManager.LoadScene("game");
+        Time.timeScale = 1.0f;
+    }
 
 	// Options
 	public void OnOptionsClicked() {
