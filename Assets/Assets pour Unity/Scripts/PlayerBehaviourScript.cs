@@ -8,8 +8,8 @@ using System.Collections;
 
 public class PlayerBehaviourScript : MonoBehaviour {
 
-    public float _runSpeed = 10.5f;
-    public float _strafeSpeed = 0.5f;
+    public float _runSpeed = 100.5f;
+    public float _strafeSpeed = 100.5f;
     private const float CAMERA_TURN_FACTOR = 10.0f;
     public GameObject _cameraPivot;
 
