@@ -68,6 +68,7 @@ public class MainMenu : MonoBehaviour {
 	public void OnBackClicked() {
 		_menu.SetActive (true);
 		_options.SetActive (false);
+        _mode.SetActive(false);
 		_howto.SetActive (false);
 	}
 }
