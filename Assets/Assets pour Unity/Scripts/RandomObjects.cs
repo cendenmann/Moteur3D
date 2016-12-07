@@ -7,14 +7,12 @@ using System.Collections;
 
 public class RandomObjects : MonoBehaviour
 {
-
-
-
     public GameObject[] rubish = new GameObject[20];
     public int numberEach;
     public float min, max, minr, maxr;
     public ArrayList arrayList = new ArrayList();
     object[] arrayObjects = new object[4];
+
     void Start()
     {
         PlaceRubbish();

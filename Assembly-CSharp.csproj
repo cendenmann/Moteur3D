@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Assets pour Unity\Scripts\Affichage.cs" />
+     <Compile Include="Assets\Assets pour Unity\Scripts\AudioPlayer.cs" />
      <Compile Include="Assets\Assets pour Unity\Scripts\BinSensor.cs" />
      <Compile Include="Assets\Assets pour Unity\Scripts\ButtonImage.cs" />
      <Compile Include="Assets\Assets pour Unity\Scripts\Collect.cs" />

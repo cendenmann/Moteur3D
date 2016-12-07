@@ -12,6 +12,7 @@ public class PlayerBehaviourScript : MonoBehaviour {
     public float _strafeSpeed = 100.5f;
     private const float CAMERA_TURN_FACTOR = 10.0f;
     public GameObject _cameraPivot;
+    public AudioSource _collect;
 
     public Text scoreText;
     private int score;
@@ -67,5 +68,11 @@ public class PlayerBehaviourScript : MonoBehaviour {
         score += newScoreValue;
         UpdateScore();
         return score;
+    }
+
+    public void OnCollect()
+    {
+        // Play sound
+        _collect.Play();
     }
 }
