@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class Affichage : MonoBehaviour {
+public class Display : MonoBehaviour {
 
 	public GameObject _player;
 
@@ -22,7 +22,7 @@ public class Affichage : MonoBehaviour {
 	}
 
 	// 
-	public void Couleur(string slot, string name) {
+	public void GiveColor(string slot, string name) {
 		Image img = GameObject.Find (slot).GetComponent<Image>();
 		switch (name) {
 		case "metal":
@@ -48,10 +48,10 @@ public class Affichage : MonoBehaviour {
 		int index = _player.GetComponent<Inventory> ().LengthInventory () - 1;
 		for (int i = 1; i < 5; i++) {
 			if (index >= 0) {
-				Couleur ("Slot" + i, _player.GetComponent<Inventory> ().inventory [index]);
+				GiveColor ("Slot" + i, _player.GetComponent<Inventory> ().inventory [index]);
 				index--;
 			} else {
-				Couleur ("Slot" + i, "");
+				GiveColor ("Slot" + i, "");
 				index--;
 			}
 		}

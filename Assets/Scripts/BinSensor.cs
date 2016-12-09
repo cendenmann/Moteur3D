@@ -28,7 +28,7 @@ public class BinSensor : MonoBehaviour {
 	void OnTriggerEnter(Collider intruder) {
 		if (intruder.tag == "Player") {
 			_tri.SetActive (true);
-			_tri.GetComponent<Affichage> ().DisplayInventory();
+			_tri.GetComponent<Display> ().DisplayInventory();
 			Time.timeScale = 0.0f;
 			Cursor.visible = true;
 		}

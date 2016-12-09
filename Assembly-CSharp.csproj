@@ -45,11 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Affichage.cs" />
      <Compile Include="Assets\Scripts\AudioPlayer.cs" />
      <Compile Include="Assets\Scripts\BinSensor.cs" />
      <Compile Include="Assets\Scripts\ButtonImage.cs" />
      <Compile Include="Assets\Scripts\Collect.cs" />
+     <Compile Include="Assets\Scripts\Display.cs" />
      <Compile Include="Assets\Scripts\GameInterface.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
