@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\NextLevelSensor.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\QualityButton.cs" />
      <Compile Include="Assets\Scripts\RandomObjects.cs" />
      <Compile Include="Assets\Scripts\Sort.cs" />
      <None Include="Assets\Skyboxes\_skybox info.txt" />

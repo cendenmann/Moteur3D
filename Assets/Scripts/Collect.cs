@@ -1,6 +1,6 @@
 ﻿/* Endenmann Cyrielle - Pavlov Catalina
  * Projet 3D
- * Inventory class
+ * Collect class
  */
 
 using UnityEngine;
@@ -21,7 +21,6 @@ public class Collect : MonoBehaviour {
         if (intruder.tag == "Player")
         {
             // Cyrielle - Partie Inventory
-			Debug.Log(this.gameObject.tag);
             switch (this.gameObject.tag)
             {
                 case "paper":

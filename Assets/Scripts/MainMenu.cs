@@ -53,6 +53,10 @@ public class MainMenu : MonoBehaviour {
 		_options.SetActive (true);
 	}
 
+	public void OnSetQuality(int value) {
+		QualitySettings.SetQualityLevel (value, false);
+	}
+
 	// How to play
 	public void OnHowToClicked() {
 		_menu.SetActive (false);

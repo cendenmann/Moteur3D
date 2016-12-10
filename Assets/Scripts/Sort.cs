@@ -24,7 +24,7 @@ public class Sort : MonoBehaviour {
 	void Update () {
 	
 	}
-
+		
 	public void OnGlassClicked () {
 		string item = _player.GetComponent<Inventory> ().LastItem ();
 		if (item == "glass") {
