@@ -11,6 +11,11 @@ public class Display : MonoBehaviour {
 
 	public GameObject _player;
 
+	public Sprite _spriteMetal;
+	public Sprite _spritePaper;
+	public Sprite _spritePlastic;
+	public Sprite _spriteGlass;
+
 	// Use this for initialization
 	void Start () {
 
@@ -26,16 +31,20 @@ public class Display : MonoBehaviour {
 		Image img = GameObject.Find (slot).GetComponent<Image>();
 		switch (name) {
 		case "metal":
-			img.color = Color.red;
+			img.color = Color.white;
+			img.sprite = _spriteMetal;
 			break;
 		case "paper":
-			img.color = Color.blue;
+			img.color = Color.white;
+			img.sprite = _spritePaper;
 			break;
 		case "plastic":
-			img.color = Color.yellow;
+			img.color = Color.white;
+			img.sprite = _spritePlastic;
 			break;
 		case "glass":
-			img.color = Color.green;
+			img.color = Color.white;
+			img.sprite = _spriteGlass;
 			break;
 		case "":
 			img.color = Color.clear;
