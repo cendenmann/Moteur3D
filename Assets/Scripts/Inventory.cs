@@ -45,9 +45,19 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
+	// Retourne le dernier element de l'inventaire, empty si vide
+	public string LastItem() {
+		int index = LengthInventory ()-1;
+		if (index >= 0) {
+			return inventory [index];
+		} else {
+			return string.Empty;
+		}
+	}
+
 	// Retrait du dernier element dans l'inventaire
 	public bool RemoveLastItem() {
-		int index = LengthInventory ();
+		int index = LengthInventory () - 1;
 		inventory [index] = string.Empty;
 		if (inventory [index] == string.Empty) {
 			return true;
