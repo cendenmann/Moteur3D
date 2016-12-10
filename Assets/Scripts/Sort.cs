@@ -4,12 +4,16 @@
  */
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Sort : MonoBehaviour {
 
 	public GameObject _player;
 	public GameObject _sort;
+
+	public Text _score;
+	private int scoreValue = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +31,11 @@ public class Sort : MonoBehaviour {
 			if (_player.GetComponent<Inventory> ().RemoveLastItem ()) {
 				_sort.GetComponent<Display> ().DisplayInventory ();
 			}
+			scoreValue++;
+		} else {
+			scoreValue--;
 		}
+		UpdateScore ();
 	}
 
 	public void OnPlasticClicked () {
@@ -36,7 +44,11 @@ public class Sort : MonoBehaviour {
 			if (_player.GetComponent<Inventory> ().RemoveLastItem ()) {
 				_sort.GetComponent<Display> ().DisplayInventory ();
 			}
+			scoreValue++;
+		} else {
+			scoreValue--;
 		}
+		UpdateScore ();
 	}
 
 	public void OnPaperClicked () {
@@ -45,7 +57,11 @@ public class Sort : MonoBehaviour {
 			if (_player.GetComponent<Inventory> ().RemoveLastItem ()) {
 				_sort.GetComponent<Display> ().DisplayInventory ();
 			}
+			scoreValue++;
+		} else {
+			scoreValue--;
 		}
+		UpdateScore ();
 	}
 
 	public void OnMetalClicked () {
@@ -54,6 +70,17 @@ public class Sort : MonoBehaviour {
 			if (_player.GetComponent<Inventory> ().RemoveLastItem ()) {
 				_sort.GetComponent<Display> ().DisplayInventory ();
 			}
+			scoreValue++;
+		} else {
+			scoreValue--;
 		}
+		UpdateScore ();
+	}
+
+	public void UpdateScore() {
+		if (scoreValue < 0) {
+			scoreValue = 0;
+		}
+		_score.text = scoreValue.ToString ();
 	}
 }
