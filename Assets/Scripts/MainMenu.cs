@@ -1,4 +1,4 @@
-﻿/* Endenmann Cyrielle
+﻿/* Endenmann Cyrielle - Pavlov Catalina
  * Projet 3D
  * MainMenu class
  */
