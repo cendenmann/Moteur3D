@@ -27,6 +27,8 @@ public class RandomObjects : MonoBehaviour
                 var v = (GameObject)Instantiate(rubish[i], GeneratedPosition(), Quaternion.Euler(GeneratedRotation()));
                 v.AddComponent<BoxCollider>().isTrigger = true;
                 v.AddComponent<Collect>();
+                v.AddComponent<Rigidbody>();
+                v.AddComponent<CapsuleCollider>();
             }
           
         }
@@ -36,7 +38,7 @@ public class RandomObjects : MonoBehaviour
     {
         float x, y, z;
         x = Random.Range(min, max);
-        y = 0.1f;
+        y = 10f;
         z = Random.Range(min, max);
 
         Vector3 pos = new Vector3(x, y, z);
