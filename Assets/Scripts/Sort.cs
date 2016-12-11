@@ -11,6 +11,8 @@ public class Sort : MonoBehaviour {
 
 	public GameObject _player;
 	public GameObject _sort;
+	public GameObject _next;
+	public GameObject _sortMenu;
 
 	public Text _score;
 	public Text _scoreNext;
@@ -76,6 +78,17 @@ public class Sort : MonoBehaviour {
 			scoreValue--;
 		}
 		UpdateScore ();
+	}
+
+	public void OnBackClicked() {
+		_sortMenu.SetActive(false);
+		Time.timeScale = 1.0f;
+		Cursor.visible = false;
+	}
+
+	public void OnEndClicked() {
+		_sortMenu.SetActive (false);
+		_next.SetActive (true);
 	}
 
 	public void UpdateScore() {
