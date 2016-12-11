@@ -53,15 +53,10 @@ public class GameInterface : MonoBehaviour
     public void OnNextLevel()
     {
         score = _player.GetComponent<PlayerBehaviourScript>().AddScore(0);
-        scoreText.text = "Score : " +  score;
+        scoreText.text = "Score : " + score;
         _nextLevelMenu.SetActive(true);
         Time.timeScale = 0.0f;
         Cursor.visible = true;
     }
 
-    public void OnNextClicked()
-    {
-        SceneManager.LoadScene("nextGame");
-        Time.timeScale = 1.0f;
-    }
 }
