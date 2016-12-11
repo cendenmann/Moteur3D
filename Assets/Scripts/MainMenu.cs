@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour {
     // Load time scene
     public void OnTimeModeClicked()
     {
-        SceneManager.LoadScene("game");
+        SceneManager.LoadScene("timemode");
         Time.timeScale = 1.0f;
     }
 
