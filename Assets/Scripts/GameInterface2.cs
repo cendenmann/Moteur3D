@@ -63,14 +63,6 @@ public class GameInterface2 : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    //public void OnNextLevel()
-    //{
-    //    score = _player.GetComponent<PlayerBehaviourScript>().AddScore(0);
-    //    scoreText.text = "Score : " + score;
-    //    _nextLevelMenu.SetActive(true);
-    //    Time.timeScale = 0.0f;
-    //    Cursor.visible = true;
-    //}
 
     void UpdateTime(float t)
     {
