@@ -1,4 +1,4 @@
-﻿/* Pavlov Catalina
+﻿/* Pavlov Catalina - Endenmann Cyrielle
  * Projet 3D
  * GameInterface class for Time Mode Play
  */
@@ -13,14 +13,21 @@ public class GameInterface2 : MonoBehaviour
 
     public GameObject _ingameMenu;
     public GameObject _nextLevelMenu;
+	public GameObject _sortMenu;
+
     public GameObject _player;
 
     public Text timeText;
+	public Text timeTextsort;
     private float time;
 
     public GameObject _sort;
-    public GameObject _sortMenu;
+    
     public GameObject _collect;
+	public GameObject _time;
+	public GameObject _timesort;
+
+	private int sort = 0;
 
     // Use this for initialization
     void Start()
@@ -40,9 +47,13 @@ public class GameInterface2 : MonoBehaviour
             Time.timeScale = 0.0f;
             Cursor.visible = true;
         }
-
+			
         time -= Time.deltaTime;
-        UpdateTime(time);
+		if (sort == 0) {
+			UpdateTime (time);
+		} else {
+			UpdateTimeSort (time);
+		}
     }
 
     public void OnResumeClicked()
@@ -74,11 +85,30 @@ public class GameInterface2 : MonoBehaviour
         else
         {
             _collect.SetActive(false);
+			_time.SetActive (false);
             _sortMenu.SetActive(true);
+			_timesort.SetActive (true);
             _sort.GetComponent<Display>().DisplayInventory();
-            Time.timeScale = 0.0f;
+			// Enleve pour pouvoir avoir un chrono dans la partie tri
+			// => perso et souris peut encore bouger (a corriger)
+            //Time.timeScale = 0.0f;
             Cursor.visible = true;
+			sort = 1;
+			time = 30;
         }
         
     }
+
+	// Endenmann Cyrielle - Time Sort
+	void UpdateTimeSort(float t) {
+		int scoreInt = (int)t;
+		if (t > 0) {
+			timeTextsort.text = scoreInt.ToString ();
+		} else {
+			_timesort.SetActive (false);
+			_sortMenu.SetActive (false);
+			_nextLevelMenu.SetActive (true);
+			Time.timeScale = 0.0f;
+		}
+	}
 }

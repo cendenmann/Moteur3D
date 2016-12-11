@@ -13,6 +13,7 @@ public class Sort : MonoBehaviour {
 	public GameObject _sort;
 
 	public Text _score;
+	public Text _scoreNext;
 	private int scoreValue = 0;
 
 	// Use this for initialization
@@ -82,5 +83,10 @@ public class Sort : MonoBehaviour {
 			scoreValue = 0;
 		}
 		_score.text = scoreValue.ToString ();
+		DisplayScore();
+	}
+
+	public void DisplayScore() {
+		_scoreNext.text = _score.text;
 	}
 }

@@ -9,7 +9,7 @@ using System.Collections;
 public class Inventory : MonoBehaviour {
 
 	//Maximum numbers of items
-	public static int MaxItems = 20;
+	public static int MaxItems = 200;
 	public string[] inventory = new string[MaxItems];
 
 	// Use this for initialization
