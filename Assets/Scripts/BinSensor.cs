@@ -11,6 +11,7 @@ public class BinSensor : MonoBehaviour {
 	public GameObject _sort;
 	public GameObject _sortMenu;
 	public GameObject _collect;
+	public GameObject _wait;
 
 	// Use this for initialization
 	void Start () {
@@ -33,7 +34,7 @@ public class BinSensor : MonoBehaviour {
 		if (intruder.tag == "Player") {
 			_collect.SetActive (false);
 			_sortMenu.SetActive (true);
-			_sort.GetComponent<Display> ().DisplayInventory();
+			_sort.GetComponent<Display> ().DisplayInventory ();
 			Time.timeScale = 0.0f;
 			Cursor.visible = true;
 		}
