@@ -13,6 +13,8 @@ public class BinSensor : MonoBehaviour {
 	public GameObject _collect;
 	public GameObject _wait;
 
+	public bool timeMode;
+
 	// Use this for initialization
 	void Start () {
 		_sortMenu.SetActive (false);
@@ -31,7 +33,7 @@ public class BinSensor : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider intruder) {
-		if (intruder.tag == "Player") {
+		if (intruder.tag == "Player" && !timeMode) {
 			_collect.SetActive (false);
 			_sortMenu.SetActive (true);
 			_sort.GetComponent<Display> ().DisplayInventory ();
