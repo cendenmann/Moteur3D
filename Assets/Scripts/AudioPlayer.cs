@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/* Pavlov Catalina
+ * Projet 3D
+ * AudioPlayer class
+ */
+using UnityEngine;
 using System.Collections;
 
 public class AudioPlayer : MonoBehaviour {

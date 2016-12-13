@@ -9,6 +9,7 @@ using System.Collections;
 public class Collect : MonoBehaviour {
 
 	public int scoreValue = 1;
+	private bool remaining;
 
 	void Start()
 	{
@@ -24,22 +25,24 @@ public class Collect : MonoBehaviour {
             switch (this.gameObject.tag)
             {
                 case "paper":
-                    intruder.GetComponent<Inventory>().AddItem("paper");
+					remaining = intruder.GetComponent<Inventory>().AddItem("paper");
                     break;
                 case "metal":
-                    intruder.GetComponent<Inventory>().AddItem("metal");
+					remaining = intruder.GetComponent<Inventory>().AddItem("metal");
                     break;
                 case "glass":
-                    intruder.GetComponent<Inventory>().AddItem("glass");
+					remaining = intruder.GetComponent<Inventory>().AddItem("glass");
                     break;
                 case "plastic":
-                    intruder.GetComponent<Inventory>().AddItem("plastic");
+					remaining = intruder.GetComponent<Inventory>().AddItem("plastic");
                     break;
             }
             // Catalina - Partie PlayerBehaviour
-            intruder.GetComponent<PlayerBehaviourScript>().AddScore(scoreValue);
-            Destroy(this.gameObject);
-            intruder.GetComponent<PlayerBehaviourScript>().SendMessage("OnCollect");
+			if (remaining) {
+				intruder.GetComponent<PlayerBehaviourScript> ().AddScore (scoreValue);
+				Destroy (this.gameObject);
+				intruder.GetComponent<PlayerBehaviourScript> ().SendMessage ("OnCollect");
+			}
         }
 	}    
 }
