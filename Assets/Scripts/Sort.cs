@@ -13,6 +13,7 @@ public class Sort : MonoBehaviour {
 	public GameObject _sort;
 	public GameObject _next;
 	public GameObject _sortMenu;
+	public GameObject _collect;
 
 	public Text _score;
 	public Text _scoreNext;
@@ -82,6 +83,7 @@ public class Sort : MonoBehaviour {
 
 	public void OnBackClicked() {
 		_sortMenu.SetActive(false);
+		_collect.SetActive (true);
 		Time.timeScale = 1.0f;
 		Cursor.visible = false;
 	}
