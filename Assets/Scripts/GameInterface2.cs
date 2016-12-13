@@ -34,7 +34,7 @@ public class GameInterface2 : MonoBehaviour
     {
         _ingameMenu.SetActive(false);
         _nextLevelMenu.SetActive(false);
-        time = 60;
+        time = 10;
         UpdateTime(time);
     }
 
