@@ -54,7 +54,7 @@ public class Display : MonoBehaviour {
 
 	//
 	public void DisplayInventory() {
-		int index = _player.GetComponent<Inventory> ().LengthInventory () - 1;
+		int index = _player.GetComponent<Inventory> ().LengthInventory ();
 		for (int i = 1; i < 5; i++) {
 			if (index >= 0) {
 				GiveColor ("Slot" + i, _player.GetComponent<Inventory> ().inventory [index]);
