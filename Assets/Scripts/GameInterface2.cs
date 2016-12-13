@@ -17,6 +17,8 @@ public class GameInterface2 : MonoBehaviour
 
     public GameObject _player;
 
+	public Text _score;
+	private int score;
     public Text timeText;
 	public Text timeTextsort;
     private float time;
@@ -51,7 +53,7 @@ public class GameInterface2 : MonoBehaviour
         time -= Time.deltaTime;
 		if (sort == 0) {
 			UpdateTime (time);
-		} else {
+		} else if (sort == 1) {
 			UpdateTimeSort (time);
 		}
     }
@@ -100,7 +102,7 @@ public class GameInterface2 : MonoBehaviour
     }
 
 	// Endenmann Cyrielle - Time Sort
-	void UpdateTimeSort(float t) {
+	public void UpdateTimeSort(float t) {
 		int scoreInt = (int)t;
 		if (t > 0) {
 			timeTextsort.text = scoreInt.ToString ();
@@ -109,6 +111,9 @@ public class GameInterface2 : MonoBehaviour
 			_sortMenu.SetActive (false);
 			_nextLevelMenu.SetActive (true);
 			Time.timeScale = 0.0f;
+			score = int.Parse (_score.text.ToString ()) + (int)time;
+			_score.text = score.ToString ();
+			sort = 2;
 		}
 	}
 }

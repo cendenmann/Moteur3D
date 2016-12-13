@@ -14,6 +14,7 @@ public class Sort : MonoBehaviour {
 	public GameObject _next;
 	public GameObject _sortMenu;
 	public GameObject _collect;
+	public GameObject _interface;
 
 	public Text _score;
 	public Text _scoreNext;
@@ -91,6 +92,10 @@ public class Sort : MonoBehaviour {
 	public void OnEndClicked() {
 		_sortMenu.SetActive (false);
 		_next.SetActive (true);
+	}
+
+	public void OnEndTimeClicked() {
+		_interface.GetComponent<GameInterface2> ().UpdateTimeSort (0.0f);
 	}
 
 	public void UpdateScore() {
