@@ -37,3 +37,5 @@ Release (a venir)
 	- Poubelles inactives en "Time Mode"
     - Notification d'inventaire plein + pousser objets
     - Ajouter plus de sprites pour l'affichage des items
+    - Animation personnage?
+    - Ajout du temps de tri en time mode dans le how to
