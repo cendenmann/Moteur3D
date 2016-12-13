@@ -16,6 +16,8 @@ public class Display : MonoBehaviour {
 	public Sprite _spritePlastic;
 	public Sprite _spriteGlass;
 
+	public GameObject _hand;
+
 	// Use this for initialization
 	void Start () {
 
@@ -57,9 +59,15 @@ public class Display : MonoBehaviour {
 		int index = _player.GetComponent<Inventory> ().LengthInventory ();
 		for (int i = 1; i < 5; i++) {
 			if (index >= 0) {
+				if (i == 1) {
+					_hand.SetActive (true);
+				}
 				GiveColor ("Slot" + i, _player.GetComponent<Inventory> ().inventory [index]);
 				index--;
 			} else {
+				if (i == 1) {
+					_hand.SetActive (false);
+				}
 				GiveColor ("Slot" + i, "");
 				index--;
 			}
