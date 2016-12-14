@@ -38,7 +38,7 @@ public class GameInterface2 : MonoBehaviour
     {
         _ingameMenu.SetActive(false);
         _nextLevelMenu.SetActive(false);
-        time = 10;
+        time = 60;
         UpdateTime(time);
     }
 
@@ -96,7 +96,7 @@ public class GameInterface2 : MonoBehaviour
             _sort.GetComponent<Display>().DisplayInventory();
             Cursor.visible = true;
 			sort = 1;
-			time = 30;
+			time = 60;
         }
         
     }
@@ -104,7 +104,7 @@ public class GameInterface2 : MonoBehaviour
 	// Endenmann Cyrielle - Time Sort
 	public void UpdateTimeSort(float t) {
 		int scoreInt = (int)t;
-		if (t > 0) {
+		if (t > 0 && _player.GetComponent<Inventory>().LengthInventory() >= 0) {
 			timeTextsort.text = scoreInt.ToString ();
 		} else {
 			_timesort.SetActive (false);
