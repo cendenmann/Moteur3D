@@ -29,6 +29,8 @@ public class GameInterface2 : MonoBehaviour
 	public GameObject _time;
 	public GameObject _timesort;
 
+    //public GameObject _player;
+
 	private int sort = 0;
 
     // Use this for initialization
@@ -86,14 +88,12 @@ public class GameInterface2 : MonoBehaviour
         }
         else
         {
+            _player.GetComponent<PlayerBehaviourScript>().isSortMode = true;
             _collect.SetActive(false);
 			_time.SetActive (false);
             _sortMenu.SetActive(true);
 			_timesort.SetActive (true);
             _sort.GetComponent<Display>().DisplayInventory();
-			// Enleve pour pouvoir avoir un chrono dans la partie tri
-			// => perso et souris peut encore bouger (a corriger)
-            //Time.timeScale = 0.0f;
             Cursor.visible = true;
 			sort = 1;
 			time = 30;
@@ -110,7 +110,7 @@ public class GameInterface2 : MonoBehaviour
 			_timesort.SetActive (false);
 			_sortMenu.SetActive (false);
 			_nextLevelMenu.SetActive (true);
-			Time.timeScale = 0.0f;
+            Time.timeScale = 0.0f;
 			score = int.Parse (_score.text.ToString ()) + (int)time;
 			_score.text = score.ToString ();
 			sort = 2;

@@ -6,43 +6,55 @@
 using UnityEngine;
 using System.Collections;
 
-public class Collect : MonoBehaviour {
+public class Collect : MonoBehaviour
+{
 
-	public int scoreValue = 1;
-	private bool remaining;
+    public int scoreValue = 1;
+    private bool remaining;
+    private bool isSortMode;
 
-	void Start()
-	{
+    void Start()
+    {
 
-	}
+    }
 
-	void OnTriggerEnter(Collider intruder)
-	{
+    void OnTriggerEnter(Collider intruder)
+    {
 
         if (intruder.tag == "Player")
         {
+
+            isSortMode = intruder.GetComponent<PlayerBehaviourScript>().isSortModeOn();
+            Debug.Log(isSortMode);
             // Cyrielle - Partie Inventory
-            switch (this.gameObject.tag)
+            if (isSortMode == false)
             {
-                case "paper":
-					remaining = intruder.GetComponent<Inventory>().AddItem("paper");
-                    break;
-                case "metal":
-					remaining = intruder.GetComponent<Inventory>().AddItem("metal");
-                    break;
-                case "glass":
-					remaining = intruder.GetComponent<Inventory>().AddItem("glass");
-                    break;
-                case "plastic":
-					remaining = intruder.GetComponent<Inventory>().AddItem("plastic");
-                    break;
+
+                switch (this.gameObject.tag)
+                {
+                    case "paper":
+                        remaining = intruder.GetComponent<Inventory>().AddItem("paper");
+                        break;
+                    case "metal":
+                        remaining = intruder.GetComponent<Inventory>().AddItem("metal");
+                        break;
+                    case "glass":
+                        remaining = intruder.GetComponent<Inventory>().AddItem("glass");
+                        break;
+                    case "plastic":
+                        remaining = intruder.GetComponent<Inventory>().AddItem("plastic");
+                        break;
+                }
+
+                // Catalina - Partie PlayerBehaviour
+                if (remaining)
+                {
+                    intruder.GetComponent<PlayerBehaviourScript>().AddScore(scoreValue);
+                    Destroy(this.gameObject);
+                    intruder.GetComponent<PlayerBehaviourScript>().SendMessage("OnCollect");
+                }
             }
-            // Catalina - Partie PlayerBehaviour
-			if (remaining) {
-				intruder.GetComponent<PlayerBehaviourScript> ().AddScore (scoreValue);
-				Destroy (this.gameObject);
-				intruder.GetComponent<PlayerBehaviourScript> ().SendMessage ("OnCollect");
-			}
+
         }
-	}    
+    }
 }

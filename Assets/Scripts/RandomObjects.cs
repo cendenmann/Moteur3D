@@ -11,11 +11,15 @@ public class RandomObjects : MonoBehaviour
     public int numberEach;
     public float min, max, minr, maxr;
     public ArrayList arrayList = new ArrayList();
-    object[] arrayObjects = new object[4];
+    public object[] arrayObjects = new object[4];
+
+    public bool isSortMode;
+   
 
     void Start()
     {
         PlaceRubbish();
+        isSortMode = false;
     }
 
     void PlaceRubbish()

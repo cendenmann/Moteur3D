@@ -6,7 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class PlayerBehaviourScript : MonoBehaviour {
+public class PlayerBehaviourScript : MonoBehaviour
+{
 
     public float _runSpeed = 100.5f;
     public float _strafeSpeed = 100.5f;
@@ -17,31 +18,40 @@ public class PlayerBehaviourScript : MonoBehaviour {
     public Text scoreText;
     private int score;
 
-	// Use this for initialization
-	void Start () {
+    public bool isSortMode;
+
+    // Use this for initialization
+    void Start()
+    {
         score = 0;
+        isSortMode = false;
         UpdateScore();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (Time.timeScale == 0) return;
-        // Get mouse input
-        float horizontalMouseInput = Input.GetAxis("Mouse X");
-        float verticalMouseInput = Input.GetAxis("Mouse Y");
+    }
 
-        // Turn player and pivot
-        transform.RotateAround(transform.position, transform.up, CAMERA_TURN_FACTOR * horizontalMouseInput);
-        _cameraPivot.transform.RotateAround(_cameraPivot.transform.position, _cameraPivot.transform.right, -CAMERA_TURN_FACTOR * verticalMouseInput);
+    // Update is called once per frame
+    void Update()
+    {
+        if (isSortMode == false)
+        {
+            if (Time.timeScale == 0) return;
+            // Get mouse input
+            float horizontalMouseInput = Input.GetAxis("Mouse X");
+            float verticalMouseInput = Input.GetAxis("Mouse Y");
 
-        // Get the input from up/down keys
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+            // Turn player and pivot
+            transform.RotateAround(transform.position, transform.up, CAMERA_TURN_FACTOR * horizontalMouseInput);
+            _cameraPivot.transform.RotateAround(_cameraPivot.transform.position, _cameraPivot.transform.right, -CAMERA_TURN_FACTOR * verticalMouseInput);
 
-        // Advance...       in nose direction  by run speed * frame duration * input (-1/0/1)
-        transform.position += transform.forward * _runSpeed * Time.deltaTime * verticalInput
-                           + transform.right * _strafeSpeed * Time.deltaTime * horizontalInput;
-	}
+            // Get the input from up/down keys
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+
+            // Advance...       in nose direction  by run speed * frame duration * input (-1/0/1)
+            transform.position += transform.forward * _runSpeed * Time.deltaTime * verticalInput
+                               + transform.right * _strafeSpeed * Time.deltaTime * horizontalInput;
+        }
+
+    }
 
     private const float TEST_GROUND_DISTANCE = 0.2f;
     private bool IsOnEarth()
@@ -74,5 +84,10 @@ public class PlayerBehaviourScript : MonoBehaviour {
     {
         // Play sound
         _collect.Play();
+    }
+
+    public bool isSortModeOn()
+    {
+        return isSortMode;
     }
 }
