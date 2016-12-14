@@ -11,10 +11,19 @@ public class Display : MonoBehaviour {
 
 	public GameObject _player;
 
-	public Sprite _spriteMetal;
-	public Sprite _spritePaper;
-	public Sprite _spritePlastic;
-	public Sprite _spriteGlass;
+	public Sprite _spriteMetal1;
+	public Sprite _spriteMetal2;
+	public Sprite _spriteMetal3;
+
+	public Sprite _spritePaper1;
+	public Sprite _spritePaper2;
+	public Sprite _spritePaper3;
+
+	public Sprite _spritePlastic1;
+	public Sprite _spritePlastic2;
+
+	public Sprite _spriteGlass1;
+	public Sprite _spriteGlass2;
 
 	public GameObject _hand;
 
@@ -31,22 +40,37 @@ public class Display : MonoBehaviour {
 	// 
 	public void GiveColor(string slot, string name) {
 		Image img = GameObject.Find (slot).GetComponent<Image>();
+		img.color = Color.white;
 		switch (name) {
-		case "metal":
-			img.color = Color.white;
-			img.sprite = _spriteMetal;
+		case "metal1":
+			img.sprite = _spriteMetal1;
 			break;
-		case "paper":
-			img.color = Color.white;
-			img.sprite = _spritePaper;
+		case "metal2":
+			img.sprite = _spriteMetal2;
 			break;
-		case "plastic":
-			img.color = Color.white;
-			img.sprite = _spritePlastic;
+		case "metal3":
+			img.sprite = _spriteMetal3;
 			break;
-		case "glass":
-			img.color = Color.white;
-			img.sprite = _spriteGlass;
+		case "paper1":
+			img.sprite = _spritePaper1;
+			break;
+		case "paper2":
+			img.sprite = _spritePaper2;
+			break;
+		case "paper3":
+			img.sprite = _spritePaper3;
+			break;
+		case "plastic1":
+			img.sprite = _spritePlastic1;
+			break;
+		case "plastic2":
+			img.sprite = _spritePlastic2;
+			break;
+		case "glass1":
+			img.sprite = _spriteGlass1;
+			break;
+		case "glass2":
+			img.sprite = _spriteGlass2;
 			break;
 		case "":
 			img.color = Color.clear;

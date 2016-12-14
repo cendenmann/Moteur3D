@@ -25,7 +25,6 @@ public class Collect : MonoBehaviour
         {
 
             isSortMode = intruder.GetComponent<PlayerBehaviourScript>().isSortModeOn();
-            Debug.Log(isSortMode);
             // Cyrielle - Partie Inventory
             if (isSortMode == false)
             {
@@ -33,16 +32,16 @@ public class Collect : MonoBehaviour
                 switch (this.gameObject.tag)
                 {
                     case "paper":
-                        remaining = intruder.GetComponent<Inventory>().AddItem("paper");
+						remaining = intruder.GetComponent<Inventory>().AddItem(this.gameObject.name.Substring(0,6));
                         break;
                     case "metal":
-                        remaining = intruder.GetComponent<Inventory>().AddItem("metal");
+						remaining = intruder.GetComponent<Inventory>().AddItem(this.gameObject.name.Substring(0,6));
                         break;
                     case "glass":
-                        remaining = intruder.GetComponent<Inventory>().AddItem("glass");
+						remaining = intruder.GetComponent<Inventory>().AddItem(this.gameObject.name.Substring(0,6));
                         break;
                     case "plastic":
-                        remaining = intruder.GetComponent<Inventory>().AddItem("plastic");
+						remaining = intruder.GetComponent<Inventory>().AddItem(this.gameObject.name.Substring(0,8));
                         break;
                 }
 
