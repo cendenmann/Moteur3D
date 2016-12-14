@@ -15,6 +15,8 @@ public class Inventory : MonoBehaviour {
 
 	private int _number = 0;
 
+	public GameObject _message;
+
 	// Use this for initialization
 	void Start () {
 		StartInventory (MaxItems);
@@ -49,6 +51,7 @@ public class Inventory : MonoBehaviour {
 			inventory [index] = name;
 			return true;
 		} else {
+			_message.GetComponent<DisplayMessage> ().AppearMessage ();
 			Debug.Log ("Inventory full");
 			return false;
 		}

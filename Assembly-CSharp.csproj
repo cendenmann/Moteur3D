@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\BinSensor.cs" />
      <Compile Include="Assets\Scripts\Collect.cs" />
      <Compile Include="Assets\Scripts\Display.cs" />
+     <Compile Include="Assets\Scripts\DisplayMessage.cs" />
      <Compile Include="Assets\Scripts\GameInterface.cs" />
      <Compile Include="Assets\Scripts\GameInterface2.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
