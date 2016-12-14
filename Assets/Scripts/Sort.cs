@@ -15,6 +15,7 @@ public class Sort : MonoBehaviour {
 	public GameObject _sortMenu;
 	public GameObject _collect;
 	public GameObject _interface;
+	public GameObject _erreur;
 
 	public Text _score;
 	public Text _scoreNext;
@@ -38,6 +39,8 @@ public class Sort : MonoBehaviour {
 			}
 			scoreValue++;
 		} else {
+			_erreur.SetActive (true);
+			Time.timeScale = 0.0f;
 			scoreValue--;
 		}
 		UpdateScore ();
@@ -51,6 +54,8 @@ public class Sort : MonoBehaviour {
 			}
 			scoreValue++;
 		} else {
+			_erreur.SetActive (true);
+			Time.timeScale = 0.0f;
 			scoreValue--;
 		}
 		UpdateScore ();
@@ -64,6 +69,8 @@ public class Sort : MonoBehaviour {
 			}
 			scoreValue++;
 		} else {
+			_erreur.SetActive (true);
+			Time.timeScale = 0.0f;
 			scoreValue--;
 		}
 		UpdateScore ();
@@ -77,6 +84,8 @@ public class Sort : MonoBehaviour {
 			}
 			scoreValue++;
 		} else {
+			_erreur.SetActive (true);
+			Time.timeScale = 0.0f;
 			scoreValue--;
 		}
 		UpdateScore ();
@@ -96,6 +105,11 @@ public class Sort : MonoBehaviour {
 
 	public void OnEndTimeClicked() {
 		_interface.GetComponent<GameInterface2> ().UpdateTimeSort (0.0f);
+	}
+
+	public void OnOkClicked() {
+		_erreur.SetActive (false);
+		Time.timeScale = 1.0f;
 	}
 
 	public void UpdateScore() {
