@@ -109,7 +109,7 @@ public class Sort : MonoBehaviour {
 
 	public void OnOkClicked() {
 		_erreur.SetActive (false);
-		Time.timeScale = 1.0f;
+        //Time.timeScale = 1.0f;
 	}
 
 	public void UpdateScore() {
